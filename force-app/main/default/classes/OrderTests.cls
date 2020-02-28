@@ -20,7 +20,7 @@
    @isTest  static void OrderExtension_UnitTest() {
         PageReference reference = Page.OrderEdit;
         Test.setCurrentPage(reference);
-        Order CurOrder = [Select Id,Status from Order limit 1];
+        Order CurOrder = [SELECT Id,Status FROM Order LIMIT 1];
         ApexPages.StandardController controller = new Apexpages.StandardController(CurOrder);
         OrderExtension extension = new OrderExtension(controller);
         System.assertEquals(Constants.DEFAULT_ROWS, extension.orderItemList.size());
